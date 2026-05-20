@@ -16,12 +16,15 @@ barba.init({
   cache: false,
   transitions: [
     {
-      name: 'opacity-transition',
-      leave(data) {
-        return gsap.to(data.current.container, { opacity: 0 });
+      name: 'fade',
+      leave({ current }) {
+        const done = this.async();
+        gsap.timeline({ onComplete: done })
+          .to(current.container, { autoAlpha: 0, duration: 0.4, ease: 'power2.in' });
       },
-      enter(data) {
-        return gsap.from(data.next.container, { opacity: 0 });
+      enter({ next }) {
+        gsap.set(next.container, { autoAlpha: 0 });
+        return gsap.to(next.container, { autoAlpha: 1, duration: 0.5, ease: 'power2.out' });
       },
     },
   ],

@@ -8,11 +8,6 @@
     src: url("fonts/JetBrainsMono-Regular.woff2");
 }
 
-.text-reveal {
-    opacity: 0;
-    transition: opacity 0.5s ease-in-out;
-}
-
 .visible {
     opacity: 1;
 }
@@ -25,7 +20,12 @@
     text-align: center;
 }
 
-
+#app {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+}
 
 body {
     margin: 0;
@@ -35,7 +35,10 @@ body {
     min-width: 320px;
     min-height: 100vh;
     align-items: center;
-
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
     background-image: url("background.svg");
     background-repeat: no-repeat;
     background-size: contain;
@@ -49,10 +52,6 @@ h1 {
 
 .title {
     margin-bottom: 40px;
-}
-
-#app {
-    max-width: 1280px;
 }
 
 .logo {
@@ -139,12 +138,10 @@ button {
 }
 
 button:hover {
-    background-image: radial-gradient(
-            farthest-corner at 77% 83%,
+    background-image: radial-gradient(farthest-corner at 77% 83%,
             rgba(1, 197, 245, 0.5) 2%,
             rgba(1, 126, 254, 0.5) 28%,
-            rgba(25, 25, 28, 0) 70%
-    );
+            rgba(25, 25, 28, 0) 70%);
     border: 1px solid rgba(76, 166, 255, 0.2);
     background-clip: padding-box;
 }
