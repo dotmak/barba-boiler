@@ -1,10 +1,8 @@
+export function initHome(container) {
+  const teardowns = [];
 
-const header = document.querySelector('header');
+  // Add page-specific module inits here, e.g.:
+  // teardowns.push(initHeroAnim(container));
 
-const toggleMenu = () => {
-    return header.addEventListener('click', (e) => {
-        header.classList.toggle('active');
-    })
+  return () => teardowns.forEach((fn) => fn());
 }
-
-toggleMenu();
